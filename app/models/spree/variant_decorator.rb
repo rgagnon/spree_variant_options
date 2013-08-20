@@ -10,7 +10,7 @@ Spree::Variant.class_eval do
     { 
       :id    => self.id, 
       :count => self.count_on_hand, 
-      :price => number_to_currency(actual_price)
+      :price => price_in(Spree::Config[:currency]).display_price
     }
   end
     
